@@ -1,0 +1,8 @@
+[workspace]
+
+members = [
+    "scheduler",
+    "node_metrics",
+    "proto",
+    "riklet"
+]
