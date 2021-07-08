@@ -57,7 +57,7 @@ pub fn create(
             .unwrap();
         Ok(tiny_http::Response::from_string(content)
             .with_header(tiny_http::Header::from_str("Content-Type: application/json").unwrap())
-            .with_status_code(tiny_http::StatusCode::from(200)))
+            .with_status_code(tiny_http::StatusCode::from(201)))
     } else {
         logger
             .send(LoggingChannel {

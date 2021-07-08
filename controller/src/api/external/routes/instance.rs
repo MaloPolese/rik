@@ -78,7 +78,7 @@ pub fn create(
                 })
                 .unwrap();
             return Ok(tiny_http::Response::from_string("Name already used")
-                .with_status_code(tiny_http::StatusCode::from(404)));
+                .with_status_code(tiny_http::StatusCode::from(400)));
         }
 
         // Name cannot be used with multiple replicas

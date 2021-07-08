@@ -67,7 +67,7 @@ pub fn create(
             })
             .unwrap();
         return Ok(tiny_http::Response::from_string("Name already used")
-            .with_status_code(tiny_http::StatusCode::from(404)));
+            .with_status_code(tiny_http::StatusCode::from(400)));
     }
 
     if let Ok(inserted_id) = RikRepository::insert(
@@ -85,7 +85,7 @@ pub fn create(
         Ok(
             tiny_http::Response::from_string(serde_json::to_string(&workload_id).unwrap())
                 .with_header(tiny_http::Header::from_str("Content-Type: application/json").unwrap())
-                .with_status_code(tiny_http::StatusCode::from(200)),
+                .with_status_code(tiny_http::StatusCode::from(201)),
         )
     } else {
         logger
