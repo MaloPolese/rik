@@ -1,4 +1,4 @@
-mod routes;
+pub mod routes;
 mod services;
 
 use crate::api::ApiChannel;
