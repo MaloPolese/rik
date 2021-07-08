@@ -183,7 +183,7 @@ mod test {
         let test_req = tiny_http::TestRequest::new()
             .with_method(tiny_http::Method::Post)
             .with_path("/api/v0/workloads.delete")
-            .with_body("{\n  \"api_version\": \"v0\",\n  \"kind\": \"pods\",\n  \"name\": \"workload-name\",\n  \"spec\": {\n    \"containers\": [\n      {\n        \"name\": \"<name>\",\n        \"image\": \"<image>\",\n        \"env\": [\n          {\n            \"name\": \"key1\",\n            \"value\": \"value1\"\n          },\n           {\n            \"name\": \"key2\",\n            \"value\": \"value2\"\n          }\n        ],\n        \"ports\": {\n          \"port\": 80,\n          \"target_port\": 80,\n          \"protocol\": \"TCP\",\n          \"type\": \"clusterIP|nodePort|loadBalancer\"\n        }\n      }\n    ]\n  }\n}");
+            .with_body("{\"id\": \"3505ee01-dae8-4471-b56c-18635c12ebc3\"}");
         let mut req: Request = Request::from(test_req);
 
         if let Some(res) = router.handle(
@@ -250,7 +250,7 @@ mod test {
         let test_req = tiny_http::TestRequest::new()
             .with_method(tiny_http::Method::Post)
             .with_path("/api/v0/instances.create")
-            .with_body("{\n  \"api_version\": \"v0\",\n  \"kind\": \"pods\",\n  \"name\": \"workload-name\",\n  \"spec\": {\n    \"containers\": [\n      {\n        \"name\": \"<name>\",\n        \"image\": \"<image>\",\n        \"env\": [\n          {\n            \"name\": \"key1\",\n            \"value\": \"value1\"\n          },\n           {\n            \"name\": \"key2\",\n            \"value\": \"value2\"\n          }\n        ],\n        \"ports\": {\n          \"port\": 80,\n          \"target_port\": 80,\n          \"protocol\": \"TCP\",\n          \"type\": \"clusterIP|nodePort|loadBalancer\"\n        }\n      }\n    ]\n  }\n}");
+            .with_body("{\"workload_id\": \"5983481e-ae6f-401e-b31a-5cc3e0c149d2\"}");
         let mut req: Request = Request::from(test_req);
 
         if let Some(res) = router.handle(
@@ -284,7 +284,7 @@ mod test {
         let test_req = tiny_http::TestRequest::new()
             .with_method(tiny_http::Method::Post)
             .with_path("/api/v0/instances.delete")
-            .with_body("{\n  \"api_version\": \"v0\",\n  \"kind\": \"pods\",\n  \"name\": \"workload-name\",\n  \"spec\": {\n    \"containers\": [\n      {\n        \"name\": \"<name>\",\n        \"image\": \"<image>\",\n        \"env\": [\n          {\n            \"name\": \"key1\",\n            \"value\": \"value1\"\n          },\n           {\n            \"name\": \"key2\",\n            \"value\": \"value2\"\n          }\n        ],\n        \"ports\": {\n          \"port\": 80,\n          \"target_port\": 80,\n          \"protocol\": \"TCP\",\n          \"type\": \"clusterIP|nodePort|loadBalancer\"\n        }\n      }\n    ]\n  }\n}");
+            .with_body("{\"id\": \"3505ee01-dae8-4471-b56c-18635c12ebc3\"}");
         let mut req: Request = Request::from(test_req);
 
         if let Some(res) = router.handle(
@@ -351,7 +351,7 @@ mod test {
         let test_req = tiny_http::TestRequest::new()
             .with_method(tiny_http::Method::Post)
             .with_path("/api/v0/tenants.create")
-            .with_body("{\n  \"api_version\": \"v0\",\n  \"kind\": \"pods\",\n  \"name\": \"workload-name\",\n  \"spec\": {\n    \"containers\": [\n      {\n        \"name\": \"<name>\",\n        \"image\": \"<image>\",\n        \"env\": [\n          {\n            \"name\": \"key1\",\n            \"value\": \"value1\"\n          },\n           {\n            \"name\": \"key2\",\n            \"value\": \"value2\"\n          }\n        ],\n        \"ports\": {\n          \"port\": 80,\n          \"target_port\": 80,\n          \"protocol\": \"TCP\",\n          \"type\": \"clusterIP|nodePort|loadBalancer\"\n        }\n      }\n    ]\n  }\n}");
+            .with_body("{\"id\": \"81383143-f4cb-4bf2-b788-846a411b4762\",\"name\": \"/tenant/default/jeantt\",\"value\": \"/tenant/default/jesdfsdfsdfsdfsdfsdfan\"}");
         let mut req: Request = Request::from(test_req);
 
         if let Some(res) = router.handle(
